@@ -4,7 +4,9 @@ import re
 
 def lambda_handler(event, context)
     # TODO implement
+    # Obtengo el cliente de la IA de AWS
     client = boto3.client(rekognition)
+    # Obtengo cliente de S3
     s3 = boto3.client(s3)
     fileObj = s3.get_object(Bucket = imgdetector, Key = imgstar01.jpeg)
     file_content = fileObj[Body].read()
